@@ -33,6 +33,7 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxStats_SIA = new System.Windows.Forms.GroupBox();
+            this.chartDohod_SDV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelMaxDohod_SDV = new System.Windows.Forms.Label();
             this.labelMinDohod_SDV = new System.Windows.Forms.Label();
             this.labelSummDohod_SDV = new System.Windows.Forms.Label();
@@ -41,14 +42,13 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.textBoxMinDohod_SDV = new System.Windows.Forms.TextBox();
             this.textBoxSummDohod_SDV = new System.Windows.Forms.TextBox();
             this.textBoxAmountPeople_SDV = new System.Windows.Forms.TextBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxStats_SIA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDohod_SDV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxStats_SIA
             // 
-            this.groupBoxStats_SIA.Controls.Add(this.chart1);
+            this.groupBoxStats_SIA.Controls.Add(this.chartDohod_SDV);
             this.groupBoxStats_SIA.Controls.Add(this.labelMaxDohod_SDV);
             this.groupBoxStats_SIA.Controls.Add(this.labelMinDohod_SDV);
             this.groupBoxStats_SIA.Controls.Add(this.labelSummDohod_SDV);
@@ -65,6 +65,23 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.groupBoxStats_SIA.TabIndex = 2;
             this.groupBoxStats_SIA.TabStop = false;
             this.groupBoxStats_SIA.Text = "Статистика";
+            // 
+            // chartDohod_SDV
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartDohod_SDV.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDohod_SDV.Legends.Add(legend1);
+            this.chartDohod_SDV.Location = new System.Drawing.Point(172, 12);
+            this.chartDohod_SDV.Name = "chartDohod_SDV";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartDohod_SDV.Series.Add(series1);
+            this.chartDohod_SDV.Size = new System.Drawing.Size(614, 426);
+            this.chartDohod_SDV.TabIndex = 29;
+            this.chartDohod_SDV.Text = "chart1";
+            this.chartDohod_SDV.Click += new System.EventHandler(this.chartDohod_SDV_Click);
             // 
             // labelMaxDohod_SDV
             // 
@@ -138,22 +155,6 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.textBoxAmountPeople_SDV.Size = new System.Drawing.Size(125, 24);
             this.textBoxAmountPeople_SDV.TabIndex = 18;
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(172, 12);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(614, 426);
-            this.chart1.TabIndex = 29;
-            this.chart1.Text = "chart1";
-            // 
             // FormAboutPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +166,7 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.Load += new System.EventHandler(this.FormAboutPeople_Load);
             this.groupBoxStats_SIA.ResumeLayout(false);
             this.groupBoxStats_SIA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDohod_SDV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,6 +182,6 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
         private System.Windows.Forms.TextBox textBoxMinDohod_SDV;
         private System.Windows.Forms.TextBox textBoxSummDohod_SDV;
         private System.Windows.Forms.TextBox textBoxAmountPeople_SDV;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDohod_SDV;
     }
 }

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
 {
     partial class FormMain
@@ -31,11 +33,11 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxTools_SDV = new System.Windows.Forms.GroupBox();
             this.labelNaming_SDV = new System.Windows.Forms.Label();
             this.panelSearch_SDV = new System.Windows.Forms.Panel();
@@ -65,19 +67,23 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.groupBoxFilters_SDV = new System.Windows.Forms.GroupBox();
             this.numericUpDownMaxDohod_SDV = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMinDohod_SDV = new System.Windows.Forms.NumericUpDown();
-            this.labelFilt_Max = new System.Windows.Forms.Label();
+            this.labelFilt_SDV = new System.Windows.Forms.Label();
             this.labelFiltMin_SDV = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonResetFilters_SDV = new System.Windows.Forms.Button();
-            this.comboBoxPos_KMA = new System.Windows.Forms.ComboBox();
-            this.labelPos_KMA = new System.Windows.Forms.Label();
+            this.comboBoxPos_SDV = new System.Windows.Forms.ComboBox();
+            this.labelPos_SDV = new System.Windows.Forms.Label();
             this.menuStripAppMenu_SDV = new System.Windows.Forms.MenuStrip();
-            this.файликиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ньюТаблицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemFile_SDV = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemNewTable_SDV = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOpen_SDV = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSave_SDV = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipOnButtonHold_SDV = new System.Windows.Forms.ToolTip(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogTable_SDV = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialogSaveTo_SDV = new System.Windows.Forms.SaveFileDialog();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxTools_SDV.SuspendLayout();
             this.panelSearch_SDV.SuspendLayout();
             this.groupBoxStats_SDV.SuspendLayout();
@@ -87,6 +93,8 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinDohod_SDV)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStripAppMenu_SDV.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxTools_SDV
@@ -114,6 +122,7 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.labelNaming_SDV.Size = new System.Drawing.Size(365, 40);
             this.labelNaming_SDV.TabIndex = 8;
             this.labelNaming_SDV.Text = "База Данных Работников";
+            this.labelNaming_SDV.Click += new System.EventHandler(this.labelNaming_SDV_Click);
             // 
             // panelSearch_SDV
             // 
@@ -141,6 +150,7 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.textBoxSearch_SDV.Name = "textBoxSearch_SDV";
             this.textBoxSearch_SDV.Size = new System.Drawing.Size(507, 31);
             this.textBoxSearch_SDV.TabIndex = 4;
+            this.textBoxSearch_SDV.TextChanged += new System.EventHandler(this.textBoxSearch_SDV_TextChanged);
             // 
             // buttonAboutPeople_SDV
             // 
@@ -287,14 +297,14 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.dataGridViewTable_SDV.AllowUserToResizeRows = false;
             this.dataGridViewTable_SDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTable_SDV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTable_SDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTable_SDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewTable_SDV.ColumnHeadersHeight = 45;
             this.dataGridViewTable_SDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNum_SDV,
@@ -305,34 +315,35 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.Pay_SDV,
             this.Table_Deadline_SDV,
             this.Table_Notes_SDV});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTable_SDV.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTable_SDV.DefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridViewTable_SDV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTable_SDV.Location = new System.Drawing.Point(231, 147);
             this.dataGridViewTable_SDV.Name = "dataGridViewTable_SDV";
             this.dataGridViewTable_SDV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTable_SDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTable_SDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewTable_SDV.RowHeadersVisible = false;
             this.dataGridViewTable_SDV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTable_SDV.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.NullValue = null;
+            this.dataGridViewTable_SDV.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewTable_SDV.RowTemplate.Height = 25;
             this.dataGridViewTable_SDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTable_SDV.Size = new System.Drawing.Size(888, 482);
             this.dataGridViewTable_SDV.TabIndex = 14;
+            this.dataGridViewTable_SDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTable_SDV_CellContentClick);
             // 
             // ColumnNum_SDV
             // 
@@ -361,8 +372,8 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             // 
             // Table_Pos_SDV
             // 
-            dataGridViewCellStyle7.NullValue = null;
-            this.Table_Pos_SDV.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.NullValue = null;
+            this.Table_Pos_SDV.DefaultCellStyle = dataGridViewCellStyle27;
             this.Table_Pos_SDV.HeaderText = "Должность";
             this.Table_Pos_SDV.Name = "Table_Pos_SDV";
             this.Table_Pos_SDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -386,13 +397,14 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             // groupBoxFilters_SDV
             // 
             this.groupBoxFilters_SDV.BackColor = System.Drawing.Color.Red;
+            this.groupBoxFilters_SDV.Controls.Add(this.groupBox1);
             this.groupBoxFilters_SDV.Controls.Add(this.numericUpDownMaxDohod_SDV);
             this.groupBoxFilters_SDV.Controls.Add(this.numericUpDownMinDohod_SDV);
-            this.groupBoxFilters_SDV.Controls.Add(this.labelFilt_Max);
+            this.groupBoxFilters_SDV.Controls.Add(this.labelFilt_SDV);
             this.groupBoxFilters_SDV.Controls.Add(this.labelFiltMin_SDV);
             this.groupBoxFilters_SDV.Controls.Add(this.panel2);
-            this.groupBoxFilters_SDV.Controls.Add(this.comboBoxPos_KMA);
-            this.groupBoxFilters_SDV.Controls.Add(this.labelPos_KMA);
+            this.groupBoxFilters_SDV.Controls.Add(this.comboBoxPos_SDV);
+            this.groupBoxFilters_SDV.Controls.Add(this.labelPos_SDV);
             this.groupBoxFilters_SDV.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBoxFilters_SDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxFilters_SDV.Location = new System.Drawing.Point(0, 24);
@@ -413,6 +425,7 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.numericUpDownMaxDohod_SDV.Name = "numericUpDownMaxDohod_SDV";
             this.numericUpDownMaxDohod_SDV.Size = new System.Drawing.Size(149, 24);
             this.numericUpDownMaxDohod_SDV.TabIndex = 32;
+            this.numericUpDownMaxDohod_SDV.ValueChanged += new System.EventHandler(this.numericUpDownMaxDohod_SDV_ValueChanged);
             // 
             // numericUpDownMinDohod_SDV
             // 
@@ -425,15 +438,16 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.numericUpDownMinDohod_SDV.Name = "numericUpDownMinDohod_SDV";
             this.numericUpDownMinDohod_SDV.Size = new System.Drawing.Size(149, 24);
             this.numericUpDownMinDohod_SDV.TabIndex = 31;
+            this.numericUpDownMinDohod_SDV.ValueChanged += new System.EventHandler(this.numericUpDownMinDohod_SDV_ValueChanged);
             // 
-            // labelFilt_Max
+            // labelFilt_SDV
             // 
-            this.labelFilt_Max.AutoSize = true;
-            this.labelFilt_Max.Location = new System.Drawing.Point(58, 599);
-            this.labelFilt_Max.Name = "labelFilt_Max";
-            this.labelFilt_Max.Size = new System.Drawing.Size(99, 18);
-            this.labelFilt_Max.TabIndex = 28;
-            this.labelFilt_Max.Text = "Макс. Оклад";
+            this.labelFilt_SDV.AutoSize = true;
+            this.labelFilt_SDV.Location = new System.Drawing.Point(58, 599);
+            this.labelFilt_SDV.Name = "labelFilt_SDV";
+            this.labelFilt_SDV.Size = new System.Drawing.Size(99, 18);
+            this.labelFilt_SDV.TabIndex = 28;
+            this.labelFilt_SDV.Text = "Макс. Оклад";
             // 
             // labelFiltMin_SDV
             // 
@@ -464,74 +478,111 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.buttonResetFilters_SDV.UseVisualStyleBackColor = true;
             this.buttonResetFilters_SDV.Click += new System.EventHandler(this.buttonResetFilters_SDV_Click);
             // 
-            // comboBoxPos_KMA
+            // comboBoxPos_SDV
             // 
-            this.comboBoxPos_KMA.FormattingEnabled = true;
-            this.comboBoxPos_KMA.Location = new System.Drawing.Point(34, 494);
-            this.comboBoxPos_KMA.Name = "comboBoxPos_KMA";
-            this.comboBoxPos_KMA.Size = new System.Drawing.Size(149, 26);
-            this.comboBoxPos_KMA.Sorted = true;
-            this.comboBoxPos_KMA.TabIndex = 13;
+            this.comboBoxPos_SDV.FormattingEnabled = true;
+            this.comboBoxPos_SDV.Location = new System.Drawing.Point(34, 494);
+            this.comboBoxPos_SDV.Name = "comboBoxPos_SDV";
+            this.comboBoxPos_SDV.Size = new System.Drawing.Size(149, 26);
+            this.comboBoxPos_SDV.Sorted = true;
+            this.comboBoxPos_SDV.TabIndex = 13;
+            this.comboBoxPos_SDV.SelectedIndexChanged += new System.EventHandler(this.comboBoxPos_SDV_SelectedIndexChanged);
             // 
-            // labelPos_KMA
+            // labelPos_SDV
             // 
-            this.labelPos_KMA.AutoSize = true;
-            this.labelPos_KMA.Location = new System.Drawing.Point(64, 457);
-            this.labelPos_KMA.Name = "labelPos_KMA";
-            this.labelPos_KMA.Size = new System.Drawing.Size(89, 18);
-            this.labelPos_KMA.TabIndex = 7;
-            this.labelPos_KMA.Text = "Должность";
+            this.labelPos_SDV.AutoSize = true;
+            this.labelPos_SDV.Location = new System.Drawing.Point(64, 457);
+            this.labelPos_SDV.Name = "labelPos_SDV";
+            this.labelPos_SDV.Size = new System.Drawing.Size(89, 18);
+            this.labelPos_SDV.TabIndex = 7;
+            this.labelPos_SDV.Text = "Должность";
             // 
             // menuStripAppMenu_SDV
             // 
             this.menuStripAppMenu_SDV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файликиToolStripMenuItem});
+            this.ToolStripMenuItemFile_SDV});
             this.menuStripAppMenu_SDV.Location = new System.Drawing.Point(0, 0);
             this.menuStripAppMenu_SDV.Name = "menuStripAppMenu_SDV";
             this.menuStripAppMenu_SDV.Size = new System.Drawing.Size(1119, 24);
-            this.menuStripAppMenu_SDV.TabIndex = 16;
+            this.menuStripAppMenu_SDV.TabIndex = 12;
             this.menuStripAppMenu_SDV.Text = "menuStrip1";
             // 
-            // файликиToolStripMenuItem
+            // ToolStripMenuItemFile_SDV
             // 
-            this.файликиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ньюТаблицаToolStripMenuItem,
-            this.открытьToolStripMenuItem,
-            this.сохранитьToolStripMenuItem});
-            this.файликиToolStripMenuItem.Name = "файликиToolStripMenuItem";
-            this.файликиToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.файликиToolStripMenuItem.Text = "Файлики";
-            this.файликиToolStripMenuItem.Click += new System.EventHandler(this.файликиToolStripMenuItem_Click);
+            this.ToolStripMenuItemFile_SDV.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemNewTable_SDV,
+            this.ToolStripMenuItemOpen_SDV,
+            this.ToolStripMenuItemSave_SDV});
+            this.ToolStripMenuItemFile_SDV.Name = "ToolStripMenuItemFile_SDV";
+            this.ToolStripMenuItemFile_SDV.Size = new System.Drawing.Size(61, 20);
+            this.ToolStripMenuItemFile_SDV.Text = "Файлик";
             // 
-            // ньюТаблицаToolStripMenuItem
+            // ToolStripMenuItemNewTable_SDV
             // 
-            this.ньюТаблицаToolStripMenuItem.Name = "ньюТаблицаToolStripMenuItem";
-            this.ньюТаблицаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ньюТаблицаToolStripMenuItem.Text = "Нью Таблица";
-            this.ньюТаблицаToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemNewTable_SDV_Click);
+            this.ToolStripMenuItemNewTable_SDV.Name = "ToolStripMenuItemNewTable_SDV";
+            this.ToolStripMenuItemNewTable_SDV.Size = new System.Drawing.Size(135, 22);
+            this.ToolStripMenuItemNewTable_SDV.Text = "Нью Тэйбл";
+            this.ToolStripMenuItemNewTable_SDV.Click += new System.EventHandler(this.ToolStripMenuItemNewTable_SDV_Click_1);
             // 
-            // открытьToolStripMenuItem
+            // ToolStripMenuItemOpen_SDV
             // 
-            this.открытьToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть...";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemOpen_SDV_Click);
+            this.ToolStripMenuItemOpen_SDV.Name = "ToolStripMenuItemOpen_SDV";
+            this.ToolStripMenuItemOpen_SDV.Size = new System.Drawing.Size(135, 22);
+            this.ToolStripMenuItemOpen_SDV.Text = "Открыть...";
+            this.ToolStripMenuItemOpen_SDV.Click += new System.EventHandler(this.ToolStripMenuItemOpen_SDV_Click);
             // 
-            // сохранитьToolStripMenuItem
+            // ToolStripMenuItemSave_SDV
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить...";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.ToolStripMenuItemSave_SDV.Name = "ToolStripMenuItemSave_SDV";
+            this.ToolStripMenuItemSave_SDV.Size = new System.Drawing.Size(135, 22);
+            this.ToolStripMenuItemSave_SDV.Text = "Сохранить";
+            this.ToolStripMenuItemSave_SDV.Click += new System.EventHandler(this.ToolStripMenuItemSave_SDV_Click);
             // 
-            // toolTipOnButtonHold_SDV
+            // openFileDialogTable_SDV
             // 
-            this.toolTipOnButtonHold_SDV.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            this.openFileDialogTable_SDV.FileName = "openFileDialog1";
             // 
-            // openFileDialog1
+            // saveFileDialogSaveTo_SDV
             // 
-            this.openFileDialog1.FileName = "openFileDialogTable_SDV";
+            this.saveFileDialogSaveTo_SDV.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(205, 359);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Создатель";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(17, 248);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 108);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Шабуков Д. В.\r\nСтудент ВШЦТ \r\nСМАРТб-23-1\r\nВариант 15";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Tyuiu.ShabukovDV.Sprint7.Review.V15.Properties.Resources.WS0L_7GshTw;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 222);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormMain
             // 
@@ -543,7 +594,6 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.Controls.Add(this.groupBoxTools_SDV);
             this.Controls.Add(this.groupBoxFilters_SDV);
             this.Controls.Add(this.menuStripAppMenu_SDV);
-            this.MainMenuStrip = this.menuStripAppMenu_SDV;
             this.Name = "FormMain";
             this.Text = "Договорная деятельность организации";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -561,9 +611,17 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
             this.panel2.ResumeLayout(false);
             this.menuStripAppMenu_SDV.ResumeLayout(false);
             this.menuStripAppMenu_SDV.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -597,19 +655,23 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
         private System.Windows.Forms.GroupBox groupBoxFilters_SDV;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxDohod_SDV;
         private System.Windows.Forms.NumericUpDown numericUpDownMinDohod_SDV;
-        private System.Windows.Forms.Label labelFilt_Max;
+        private System.Windows.Forms.Label labelFilt_SDV;
         private System.Windows.Forms.Label labelFiltMin_SDV;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonResetFilters_SDV;
-        private System.Windows.Forms.ComboBox comboBoxPos_KMA;
-        private System.Windows.Forms.Label labelPos_KMA;
+        private System.Windows.Forms.ComboBox comboBoxPos_SDV;
+        private System.Windows.Forms.Label labelPos_SDV;
         private System.Windows.Forms.MenuStrip menuStripAppMenu_SDV;
-        private System.Windows.Forms.ToolStripMenuItem файликиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ньюТаблицаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTipOnButtonHold_SDV;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialogTable_SDV;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogSaveTo_SDV;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFile_SDV;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNewTable_SDV;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpen_SDV;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSave_SDV;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

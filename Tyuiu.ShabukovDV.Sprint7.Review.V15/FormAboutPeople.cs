@@ -38,5 +38,10 @@ namespace Tyuiu.ShabukovDV.Sprint7.Review.V15
 
             }
         }
+
+        private void chartDohod_SDV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
